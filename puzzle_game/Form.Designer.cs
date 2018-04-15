@@ -34,7 +34,12 @@
             this.col_textarea = new System.Windows.Forms.TextBox();
             this.tile_size_reset_btn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.list_btn = new System.Windows.Forms.Button();
+            this.display_btn = new System.Windows.Forms.Button();
+            this.plan_btn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -94,7 +99,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tile_size_reset_btn.Location = new System.Drawing.Point(204, 3);
             this.tile_size_reset_btn.Name = "tile_size_reset_btn";
-            this.tile_size_reset_btn.Size = new System.Drawing.Size(47, 23);
+            this.tile_size_reset_btn.Size = new System.Drawing.Size(125, 23);
             this.tile_size_reset_btn.TabIndex = 4;
             this.tile_size_reset_btn.Text = "重置";
             this.tile_size_reset_btn.UseVisualStyleBackColor = true;
@@ -102,6 +107,8 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -114,29 +121,80 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.row_textarea, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(254, 29);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(332, 29);
             this.tableLayoutPanel1.TabIndex = 12;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.list_btn);
+            this.panel1.Controls.Add(this.display_btn);
+            this.panel1.Controls.Add(this.plan_btn);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 274);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(332, 37);
+            this.panel1.TabIndex = 13;
+            // 
+            // list_btn
+            // 
+            this.list_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.list_btn.Enabled = false;
+            this.list_btn.Location = new System.Drawing.Point(223, 0);
+            this.list_btn.Name = "list_btn";
+            this.list_btn.Size = new System.Drawing.Size(106, 34);
+            this.list_btn.TabIndex = 2;
+            this.list_btn.Text = "顯示路徑";
+            this.list_btn.UseVisualStyleBackColor = true;
+            this.list_btn.Click += new System.EventHandler(this.list_btn_Click);
+            // 
+            // display_btn
+            // 
+            this.display_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.display_btn.Enabled = false;
+            this.display_btn.Location = new System.Drawing.Point(112, 0);
+            this.display_btn.Name = "display_btn";
+            this.display_btn.Size = new System.Drawing.Size(110, 34);
+            this.display_btn.TabIndex = 1;
+            this.display_btn.Text = "路徑演示";
+            this.display_btn.UseVisualStyleBackColor = true;
+            this.display_btn.Click += new System.EventHandler(this.display_btn_Click);
+            // 
+            // plan_btn
+            // 
+            this.plan_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.plan_btn.Location = new System.Drawing.Point(4, 0);
+            this.plan_btn.Name = "plan_btn";
+            this.plan_btn.Size = new System.Drawing.Size(106, 34);
+            this.plan_btn.TabIndex = 0;
+            this.plan_btn.Text = "規劃路徑";
+            this.plan_btn.UseVisualStyleBackColor = true;
+            this.plan_btn.Click += new System.EventHandler(this.plan_btn_Click);
             // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(254, 231);
+            this.ClientSize = new System.Drawing.Size(332, 311);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MinimumSize = new System.Drawing.Size(270, 270);
+            this.MinimumSize = new System.Drawing.Size(348, 350);
             this.Name = "Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Puzzle 8";
             this.Resize += new System.EventHandler(this.Form_resize);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,6 +207,10 @@
         private System.Windows.Forms.TextBox col_textarea;
         private System.Windows.Forms.Button tile_size_reset_btn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button display_btn;
+        private System.Windows.Forms.Button plan_btn;
+        private System.Windows.Forms.Button list_btn;
     }
 }
 
