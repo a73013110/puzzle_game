@@ -77,30 +77,17 @@ namespace puzzle_game
         // 檢查是否達到目標盤面
         public bool check_puzzle_achieve_goal(string[,] tile)
         {
-            int ROW = tile.GetLength(0);
-            int COL = tile.GetLength(1);
-            for (int i = 0, index = 1; i < ROW; i++)
+            generate_goal();
+            string now_value = toValue(tile);
+            if (now_value == toValue(goal_1))
             {
-                for (int j = 0; j < COL; j++, index++)
-                {
-                    if (i == ROW - 1 && j == COL - 1)
-                    {
-                        if (tile[i, j] != " ")
-                        {
-                            return false;
-                        }
-                    }
-                    else
-                    {
-                        if (tile[i, j] != index.ToString())
-                        {
-                            return false;
-                        }
-                    }
-                }
+                return true;
             }
-
-            return true;
+            if (now_value == toValue(goal_2))
+            {
+                return true;
+            }
+            return false;
         }
 
         // 儲存目標盤面
@@ -121,6 +108,20 @@ namespace puzzle_game
             // 產生第二個目標盤面
             goal_2 = (string[,])goal_1.Clone();
             move_tile(ref goal_2[TILE_ROW_SIZE - 1, TILE_COL_SIZE - 3], ref goal_2[TILE_ROW_SIZE - 1, TILE_COL_SIZE - 2]);
+        }
+
+        public string toValue(string[,] tile)
+        {
+            string temp = "";
+            for (int i = 0; i < tile.GetLength(0); i++)
+            {
+                for (int j = 0; j < tile.GetLength(1); j++)
+                {
+                    temp += tile[i, j];
+                }
+            }
+
+            return temp;
         }
 
         // 移動tile的function-----------------------------------------------------------------------------------------------------------------------------------------------

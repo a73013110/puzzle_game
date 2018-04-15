@@ -131,7 +131,7 @@ namespace puzzle_game
             // 若成功達成條件, 就不給動了
             if (func.check_puzzle_achieve_goal(tile))
             {
-                puzzle_panel.Enabled = false;
+                MessageBox.Show("成功達到目標盤面", "恭喜~", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

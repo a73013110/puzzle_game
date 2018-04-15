@@ -109,7 +109,7 @@ namespace puzzle_game
                     foreach (var path in change_path)
                     {
                         // path.Item? , ? =1(空白按鈕) or 2(另一個按鈕) 是某個按鈕. EX: path.Item1.Item? , ? =1(X座標) or 2(Y座標)
-                        Console.WriteLine("{0}, {1} <=> {2}, {3}", path.Item1.Item1, path.Item1.Item2, path.Item2.Item1, path.Item2.Item2);
+                        //Console.WriteLine("{0}, {1} <=> {2}, {3}", path.Item1.Item1, path.Item1.Item2, path.Item2.Item1, path.Item2.Item2);
                         // 產生timer
                         timer = new System.Timers.Timer();
                         timer.Interval = 250;
